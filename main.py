@@ -88,6 +88,8 @@ def draw_maze():
     Draws the lines of the maze.
     :return: None
     """
+    # Issue: Some of the lines were in the wrong place.
+    # Fix: Double check the coordinate system and adjust values.
     line(0,0,3,0)
     line(4,0,6,0)
     line(3,2,5,2)
