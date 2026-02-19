@@ -20,6 +20,7 @@ def swap_y_axis(x : int, y : int):
     :param y: The y coordinate of (x, y)
     :return: An ordered pair of the new coordinate.
     """
+    # print(f"New x: {x}, New y: {-y}")
     return x, -y
 
 def scale_point(x : int, y : int):
@@ -31,6 +32,7 @@ def scale_point(x : int, y : int):
     :return: An ordered pair with the scaled up coordinates
     """
     scaled_x, scaled_y = x * SCALE, y * SCALE
+    # print(f"Scaled X: {scaled_x}, Scaled Y: {scaled_y}")
     return scaled_x, scaled_y
 
 def translate_point(x : int, y : int):
@@ -42,6 +44,9 @@ def translate_point(x : int, y : int):
     :return: The translated points.
     """
     translate = (CELLS * SCALE) // 2
+    # print(f"Translate amount: {translate}")
+    # print(f"Translated X: {x - translate}")
+    # print(f"Translated Y: {y - translate}")
     return x - translate, y - translate
 
 
@@ -68,12 +73,14 @@ def line(x1, y1, x2, y2):
     :param y2: The y position of the second point.
     :return: None
     """
+    # print(f"Input Coordinates: {x1}, {y1}, {x2}, {y2}")
     x1, y1 = scale_point(x1, y1)
     x1, y1 = translate_point(x1, y1)
     x1, y1 = swap_y_axis(x1, y1)
     x2, y2 = scale_point(x2, y2)
     x2, y2 = translate_point(x2, y2)
     x2, y2 = swap_y_axis(x2, y2)
+    # print(f"Output Coordinates: {x1}, {y1}, {x2}, {y2}")
     canvas.create_line(x1, y1, x2, y2)
 
 def draw_maze():
