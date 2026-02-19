@@ -43,7 +43,7 @@
 
 | Input | Process                               | Output           |
 | ----- | ------------------------------------- | ---------------- |
-| None  | Draw each line from the planned maze. | Render the maze. |
+|       | Draw each line from the planned maze. | Render the maze. |
 
 # move_to_start
 
